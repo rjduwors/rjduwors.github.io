@@ -192,64 +192,881 @@ body{font-family: DM Sans;}blockquote{border-color: #e49f37;}div[submit-success]
     </div>
 </section>
 
-<div id="custom-html-l"><section id="mustachetest">
+<div id="custom-html-l">
+    <p> Testing Gallery </p>
+      
     
-    <h3> Hello Trying on the Mustache </h3>
-
-    <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="56" binding="no">
-    <template type="amp-mustache">
-      Hi {{fullname}}!
+            <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="160" binding="no">
+                <template type="amp-mustache">
+                                    <p> ------------------------- </p>
+                    Hi {{fullname}}! <br>
+    
+                    <div id="cart1a">
+                        {{#cart_items}}
+                        <div class="cart-item">
+                            <span>{{name}}</span>
+                            <span>{{quantity}}</span>
+                            <span>{{price}}</span>
+                        </div>
+                        {{/cart_items}}
+                        {{^cart_items}}
+                        <div>Your cart is empty!</div>
+                        {{/cart_items}}
+                    </div>
+                    <p> ------------------------- </p>
+                </template>
+            </amp-list>
+    
+            <p> Test one done. <br><br></p>
+    
+    
+            <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="80" binding="no">
+                <template type="amp-mustache">
+                                    <p> ------------------------- </p>
+                    <div id="cart">
+                        {{#cart_items}}
+                        <div class="cart-item">
+                            <span>{{name}}</span>
+                            <span>{{quantity}}</span>
+                            <span>{{price}}</span>
+                        </div>
+                        {{/cart_items}}
+                        {{^cart_items}}
+                        <div>Your cart is empty!</div>
+                        {{/cart_items}}
+                    </div>
+                                    <p> ------------------------- </p>
+                </template>
+            </amp-list>
+    
+            <p>Test two done.<br><br></p>
+    
+            <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="200" binding="no">
+                <template type="amp-mustache">
+                                    <p> ------------------------- </p>
+                    Hi Inner Test gettomg ready {{fullname}}! <br>
+                    <p> P test. Hi {{fullname}}! <br> </p>
+                    <p> P test two. Hi {{fullname}}! <br> </p>
+                    <p class="caption-text mbr-fonts-style mbr-bold" mbr-theme-style="display-7" data-app-selector=".caption-text">Kennel Kristull {{fullname}}</p>
+                                    <p> ------------------------- </p>
+                </template>
+            </amp-list>
+            <p>Test three done.<br><br></p>
+    
+            <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="120" binding="no">
+                <template type="amp-mustache">
+                    <p> ------------------------- </p>
+                    <p class="caption-text mbr-fonts-style mbr-bold" mbr-theme-style="display-7" data-app-selector=".caption-text">Mustache Caption Here <br> Hi {{fullname}}!</p>
+                    <p class="caption-subtitle mbr-section-subtitle mbr-pb-2 mbr-fonts-style " mbr-theme-style="display-7" data-app-selector=".caption-subtitle">Mustache Subtitle <br> </p>
+                                    <p> ------------------------- </p>
+    
+                </template>
+            </amp-list>
+    
+            <p> Done Test four. <br><br> </p>
+            
+    <template type="amp-mustache" id="amp-template-id">
+                        <p> ------------------------- </p>
+      <div><a href="https://news.google.com">{{fullname}}</a></div>
+                        <p> ------------------------- </p>
     </template>
-  </amp-list>
-  
-  
-  <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="56" binding="no">
-    <template type="amp-mustache">
-      {{#phonenumber}}
-        The registered phone number is {{phonenumber}}
-      {{/phonenumber}}
-    </template>
-  </amp-list>
-  
-  
-  <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="56" binding="no">
-    <template type="amp-mustache">
-      {{^twitter}}
-        There is no registered twitter account for this profile
-      {{/twitter}}
-    </template>
-  </amp-list>
-  
-  
-  
-  <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="80" binding="no">
-    <template type="amp-mustache">
-      <div id="cart">
-        {{#cart_items}}
-          <div class="cart-item">
-            <span>{{name}}</span>
-            <span>{{quantity}}</span>
-            <span>{{price}}</span>
-          </div>
-        {{/cart_items}}
-        {{^cart_items}}
-          <div>Your cart is empty!</div>
-        {{/cart_items}}
+            
+    <amp-list layout="fixed-height" height="200" src="https://windhound.dog/cart.json" template="carttemplate" binding="no">
+        <br>
+        <amp-list layout="fixed-height" height="100" src="https://windhound.dog/cart.json" template="hitemplate" binding="no">
+        </amp-list>
+        <br>
+    </amp-list>
+            
+                <template type="amp-mustache" id="hitemplate">
+                                    <p> ------------***----------- </p>
+                    Hi {{fullname}}! <br>
+                                    <p> -------------***--------- </p>
+                </template>
+    
+                        <template type="amp-mustache" id="carttemplate">
+                                       <p> ------------------------- </p>
+                    <div>
+                        {{#cart_items}}
+                        <div class="cart-item" id="item_{{name}}">
+                            <span>{{name}}</span>
+                            <span>{{quantity}}</span>
+                            <span>{{price}}</span>
+                        </div>
+                        {{/cart_items}}
+                        {{^cart_items}}
+                        <div>Your cart is empty!</div>
+                        {{/cart_items}}
+                    </div>
+        
+                                    <p> ------------------------- </p>
+                </template>
+            
+            
+            
+            <p> Done Test Five <br><br></p>
+            
+            <amp-state id="localState" class="i-amphtml-element i-amphtml-layout-container" i-amphtml-layout="container" hidden="" aria-hidden="true">
+      <script type="application/json">
+        {
+          "items": [{"id": 1}, {"id": 2}, {"id": 2}]
+        }
+      </script>
+    </amp-state>
+    <amp-list src="amp-state:localState">
+      <template type="amp-mustache">
+        <li>{{id}}</li>
+      </template>
+    </amp-list>
+            
+                                          <p> ----------- 6 -------------- </p>
+          
+     <amp-state id="itemsForDisplay" class="i-amphtml-element i-amphtml-layout-container" i-amphtml-layout="container" hidden="" aria-hidden="true">
+         <script type="application/json">
+     {
+      "items": [{
+        "id": 1,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Apple",
+        "price": "1.99",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "attribution": "visualhunt",
+        "url": "#",
+        "color": "green",
+        "title": "My Title"
+      }, {
+        "id": 2,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Orange",
+        "attribution": "visualhunt",
+        "price": "0.99",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "url": "#",
+        "color": "orange",
+          "title": "My Title"
+      }, {
+        "id": 3,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Pear",
+        "attribution": "visualhunt",
+        "price": "1.50",
+        "stars": "&#9733;&#9733;&#9733;&#9734;&#9734;",
+        "url": "#",
+        "color": "green",
+          "title": "My Title"
+      }, {
+        "id": 4,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Banana",
+        "attribution": "pixabay",
+        "price": "1.50",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "url": "#",
+        "color": "yellow",
+          "title": "My Title"
+      }, {
+        "id": 5,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Watermelon",
+        "attribution": "pixabay",
+        "price": "4.50",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "url": "#",
+        "color": "red",
+          "title": "My Title"
+      }, {
+        "id": 6,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Melon",
+        "attribution": "pixabay",
+        "price": "3.50",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "url": "#",
+        "color": "yellow",
+          "title": "My Title"
+      }]
+    }
+            </script>
+        </amp-state>
+            
+            
+      <!-- ## Basic usage -->
+      <!--
+      The `amp-list` content is provided by a JSON CORS endpoint, which is defined by the `src` attribute. The URL's protocol must be HTTPS. The response must be a JSON object containing an array property `items`, for example:
+      ```json
+      {
+        "items": [
+          {
+            "title": "amp-carousel",
+            "url": "https://ampbyexample.com/components/amp-carousel"
+          },
+          ...
+        ]
+      }
+      ```
+      The list content is rendered via an [amp-mustache template](/content/amp-dev/documentation/components/reference/amp-mustache-v0.2.md). The template can be specified either by id, or by using a nested element. For performance reasons, we're adding `binding="no"` as we're not using `amp-bind`.
+      -->
+      <amp-list layout="fixed-height" height="100" src="amp-state:itemsForDisplay" binding="no">
+        <template type="amp-mustache">
+          <div><a href="{{url}}">{{title}}</a></div>
+        </template>
+      </amp-list>
+    
+                                          <p> ------------- 7 ------------ </p>
+      <!-- ## Re-using an existing template -->
+      <!--
+    The template can also be specified using an ID of an existing `template` element.
+      -->
+      <div>
+        <template type="amp-mustache" id="amp-template-id">
+          <div><a href="{{url}}">{{title}}</a></div>
+        </template>
+        <amp-list layout="fixed-height" height="100" src="amp-state:itemsForDisplay" template="amp-template-id" binding="no">
+        </amp-list>
       </div>
+                                  <p> ----------- 8 -------------- </p>
+      <!-- ## Handling list overflow -->
+      <!--
+       If the `amp-list` content requires more space than available, the AMP runtime will display the overflow element (if specified).
+      -->
+      <amp-list layout="fixed-height" height="48" src="itemsForDisplay" binding="no">
+        <div overflow="" role="button" aria-label="Show more" class="list-overflow">
+          Show more
+        </div>
+        <template type="amp-mustache">
+          <div><a href="{{url}}">{{title}}</a></div>
+        </template>
+      </amp-list>
+                                  <p> ----------- 9 -------------- </p>
+      <!--
+        ## Dynamic `src`
+    
+        The content of an `amp-list` can be changed dynamically by modifying it's `src` value using `amp-bind`.
+      -->
+      <div>
+        <amp-list layout="fixed-height" height="100" src="itemsForDisplay" [src]="srcUrl" binding="no">
+          <template type="amp-mustache">
+            <div><a href="{{url}}">{{title}}</a></div>
+          </template>
+        </amp-list>
+        <button on="tap:AMP.setState({ srcUrl: 'itemsForDisplay' })">Change source</button>
+      </div>
+                                  <p> ----------- 10 -------------- </p>
+      <!--
+        ## Rendering `amp-state`
+    
+        This sample shows off once of `amp-list`'s most powerful features: being able to directly render objects from `amp-state`, This is possible by binding the results of an `amp-bind` expression to the `src` attribute: `[src]="items"`. To make sure that the `amp-list` resizes accordingly, we dynamically calculate the `height` based on the number of list elements: `[height]="items.length * 22"`. The initial state (an empty list) is defined in an `amp-state` element.
+    
+        Important: `amp-bind` expressions are **not** evaluated on page load, but only after an user interaction has taken place. Initial `amp-list` content still needs to be fetched from a JSON endpoint.
+      -->
+      <div>
+        <amp-state id="items" class="i-amphtml-element i-amphtml-layout-container" i-amphtml-layout="container" hidden="" aria-hidden="true">
+          <script type="application/json">
+       {
+          "items": [{"id": 1}, {"id": 2}, {"id": 2}]
+        }
+          </script>
+        </amp-state>
+        <amp-list layout="fixed-height" height="0" [src]="items" [height]="items.length * 22" single-item="" items="." binding="no">
+          <template type="amp-mustache">
+            <div>{{ . }}</div>
+          </template>
+        </amp-list>
+        <button on="tap:AMP.setState({ items: items.splice(items.length, 0, 'item ' + items.length) })">
+          Add item
+        </button>
+      </div>
+                                  <p> -------------  11  ------------ </p>
+      <!--
+        ## Empty list content
+    
+        If the list contains an empty array, you can use  [mustache inverted sections](https://github.com/janl/mustache.js) to print a message.
+    
+        For this to work, we have to use the [`single-item` attribute](/content/amp-dev/documentation/components/reference/amp-list.md#single-item-(optional)) and [`items` attribute](/content/amp-dev/documentation/components/reference/amp-list.md#items-(optional)) to be able to access the root `items` array inside the template.
+      -->
+      <div>
+      <amp-list layout="fixed-height" height="100" src="itemsForDisplay" [src]="emptyListSampleSrc || 'amp-state:itemsForDisplay'" single-item="" items="." reset-on-refresh="" binding="no">
+        <template type="amp-mustache">
+          {{#items}}
+            <div><a href="{{url}}">{{title}}</a></div>
+          {{/items}}
+          {{^items}}
+            <div>No items founds.</div>
+          {{/items}}
+        </template>
+      </amp-list>
+      <button on="tap:AMP.setState({ emptyListSampleSrc: 'amp-state:itemsForDisplay' })">
+        Add items
+      </button>
+      </div>
+                                  <p> ----------- 12 -------------- </p>
+      <!--
+        ## Using a placeholder
+    
+        You can use a custom placeholder that looks similar to the rendered items to improve the user experience while the list is loading.
+        We are using an endpoint which intentionally delays the response by 10 seconds.
+      -->
+      <amp-list id="amp-list-placeholder" noloading="" layout="fixed-height" height="654" src="itemsForDisplay" binding="no">
+        <div placeholder="">
+          <div class="product">
+            <div class="image-placeholder"></div>
+            <div>Loading...</div>
+          </div>
+          <div class="product">
+            <div class="image-placeholder"></div>
+            <div>Loading...</div>
+          </div>
+          <div class="product">
+            <div class="image-placeholder"></div>
+            <div>Loading...</div>
+          </div>
+        </div>
+        <template type="amp-mustache">
+            <div class="product">
+                <amp-img width="150" height="100" alt="{{name}}" src="{{img}}"></amp-img>
+                <div>
+                  <div>{{name}}</div>
+                  <div>{{{stars}}}</div>
+                  <div>${{price}}</div>
+                </div>
+            </div>
+        </template>
+      </amp-list>
+                                  <p> ----------- 13 -------------- </p>
+      <!--
+        ## Triggering refresh
+    
+        You can use the `refresh` action to trigger a refresh on `amp-list`. Notice how we are using `reset-on-refresh` attribute to ensure that the placeholder is reloaded.
+      -->
+      <div>
+      <button on="tap:myAmpList.refresh">Refresh list</button>
+      <amp-list id="myAmpList" reset-on-refresh="" layout="fixed-height" height="600" src="itemsForDisplay" binding="no">
+        <template type="amp-mustache">
+            <div class="product">
+                <amp-img width="150" height="100" alt="{{name}}" src="{{img}}"></amp-img>
+                <div>
+                  <div>{{name}}</div>
+                  <div>{{{stars}}}</div>
+                  <div>${{price}}</div>
+                </div>
+            </div>
+        </template>
+      </amp-list>
+      </div>
+                                  <p> ----------- 14 -------------- </p>
+    
+            <div class="title__block mbr-pb-5 align-center">
+                <h4 class="mbr-section-subtitle mbr-pb-2 mbr-fonts-style display-7">Enter your gallery subtitle here</h4>
+                <h3 class="mbr-section-title mbr-bold mbr-fonts-style display-5">Gallery with Image Links</h3>
+    
+            </div>
+    
+            <div class="mbr-row mbr-px-2 gallery-wrap mbr-jc-c">
+            
+    
+                <div class="mbr-col-md-12 mbr-col-sm-12 gallery-row row-first flex-wrap mbr-col-lg-12 mbr-pb-4 mbr-flex">
+                    
+    
+    
+    
+                    
+                <div class="gallery-item mbr-col-sm-12 mbr-col-lg-6 mbr-col-md-8 md-pb mbr-px-2">
+    
+                        <div class="gallery-img-wrap">
+                            <amp-img class="mobirise-loader i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" src="assets/images/gallery00.jpg" layout="responsive" height="550" width="825" alt="image" i-amphtml-layout="responsive"><i-amphtml-sizer slot="i-amphtml-svc" style="padding-top: 66.6667%;"></i-amphtml-sizer>
+                                <div placeholder="" class="placeholder amp-hidden">
+                                    <div class="mobirise-spinner">
+                                        <em></em>
+                                        <em></em>
+                                        <em></em>
+                                    </div>
+                                <div class="mobirise-spinner">
+                                    <em></em>
+                                    <em></em>
+                                    <em></em>
+                                </div></div>
+                                <a href="https://silkenwindhound.com"></a>
+                            <img decoding="async" alt="image" src="assets/images/gallery006.jpg" class="i-amphtml-fill-content i-amphtml-replaced-content"></amp-img>
+    
+                            <div class="img-caption mbr-flex mbr-jc-c mbr-column caption-middle align-center">
+                                <p class="caption-text mbr-fonts-style mbr-white mbr-bold display-7">Kennel Kristull {{fullname}}</p>
+                                <p class="caption-subtitle mbr-section-subtitle mbr-pb-2 mbr-fonts-style mbr-white  display-7">Right from the
+                                    Beginning</p>
+                            </div>
+                        </div>
+    
+                    </div><div class="gallery-item mbr-col-sm-12 mbr-col-lg-6 mbr-col-md-8 md-pb mbr-px-2">
+    
+    
+                        <div class="gallery-img-wrap">
+                            <amp-img class="mobirise-loader i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" src="assets/images/gallery005.jpg" layout="responsive" height="550" width="825" alt="image" i-amphtml-layout="responsive"><i-amphtml-sizer slot="i-amphtml-svc" style="padding-top: 66.6667%;"></i-amphtml-sizer>
+                                <div placeholder="" class="placeholder amp-hidden">
+                                    <div class="mobirise-spinner">
+                                        <em></em>
+                                        <em></em>
+                                        <em></em>
+                                    </div>
+                                <div class="mobirise-spinner">
+                                    <em></em>
+                                    <em></em>
+                                    <em></em>
+                                </div></div>
+                                
+                            <img decoding="async" alt="image" src="assets/images/gallery005.jpg" class="i-amphtml-fill-content i-amphtml-replaced-content"></amp-img>
+                            <div class="img-caption mbr-flex mbr-jc-c mbr-column caption-middle align-center">
+    
+                                <p class="mbr-fonts-style mbr-white mbr-bold display-7"> Not in mustache
+                                    yet </p>
+    
+                                        <p class="caption-text mbr-fonts-style mbr-white mbr-bold display-7">Mustache Caption
+                                            Here <br> Hi {{fullname}}!</p>
+                                        <p class="caption-subtitle mbr-section-subtitle mbr-pb-2 mbr-fonts-style mbr-white  display-7">Mustache
+                                            Subtitle <br> {{#phonenumber}}</p>
+    
+    
+                            </div>
+                        </div>
+    
+                    </div>
+             <p> Testing Gallery </p>
+      
+    
+    
+    
+            <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="160" binding="no">
+                <template type="amp-mustache">
+                                    <p> ------------------------- </p>
+                    Hi {{fullname}}! <br>
+    
+                    <div id="cart1a">
+                        {{#cart_items}}
+                        <div class="cart-item">
+                            <span>{{name}}</span>
+                            <span>{{quantity}}</span>
+                            <span>{{price}}</span>
+                        </div>
+                        {{/cart_items}}
+                        {{^cart_items}}
+                        <div>Your cart is empty!</div>
+                        {{/cart_items}}
+                    </div>
+                    <p> ------------------------- </p>
+                </template>
+            </amp-list>
+    
+            <p> Test one done. <br><br></p>
+    
+    
+            <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="80" binding="no">
+                <template type="amp-mustache">
+                                    <p> ------------------------- </p>
+                    <div id="cart">
+                        {{#cart_items}}
+                        <div class="cart-item">
+                            <span>{{name}}</span>
+                            <span>{{quantity}}</span>
+                            <span>{{price}}</span>
+                        </div>
+                        {{/cart_items}}
+                        {{^cart_items}}
+                        <div>Your cart is empty!</div>
+                        {{/cart_items}}
+                    </div>
+                                    <p> ------------------------- </p>
+                </template>
+            </amp-list>
+    
+            <p>Test two done.<br><br></p>
+    
+            <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="200" binding="no">
+                <template type="amp-mustache">
+                                    <p> ------------------------- </p>
+                    Hi Inner Test gettomg ready {{fullname}}! <br>
+                    <p> P test. Hi {{fullname}}! <br> </p>
+                    <p> P test two. Hi {{fullname}}! <br> </p>
+                    <p class="caption-text mbr-fonts-style mbr-bold" mbr-theme-style="display-7" data-app-selector=".caption-text">Kennel Kristull {{fullname}}</p>
+                                    <p> ------------------------- </p>
+                </template>
+            </amp-list>
+            <p>Test three done.<br><br></p>
+    
+            <amp-list src="https://windhound.dog/cart.json" layout="fixed-height" height="120" binding="no">
+                <template type="amp-mustache">
+                    <p> ------------------------- </p>
+                    <p class="caption-text mbr-fonts-style mbr-bold" mbr-theme-style="display-7" data-app-selector=".caption-text">Mustache Caption Here <br> Hi {{fullname}}!</p>
+                    <p class="caption-subtitle mbr-section-subtitle mbr-pb-2 mbr-fonts-style " mbr-theme-style="display-7" data-app-selector=".caption-subtitle">Mustache Subtitle <br> </p>
+                                    <p> ------------------------- </p>
+    
+                </template>
+            </amp-list>
+    
+            <p> Done Test four. <br><br> </p>
+            
+    <template type="amp-mustache" id="amp-template-id">
+                        <p> ------------------------- </p>
+      <div><a href="https://news.google.com">{{fullname}}</a></div>
+                        <p> ------------------------- </p>
     </template>
-  </amp-list>
+            
+    <amp-list layout="fixed-height" height="200" src="https://windhound.dog/cart.json" template="carttemplate" binding="no">
+        <br>
+        <amp-list layout="fixed-height" height="100" src="https://windhound.dog/cart.json" template="hitemplate" binding="no">
+        </amp-list>
+        <br>
+    </amp-list>
+            
+                <template type="amp-mustache" id="hitemplate">
+                                    <p> ------------***----------- </p>
+                    Hi {{fullname}}! <br>
+                                    <p> -------------***--------- </p>
+                </template>
     
-    <p> External </p>
-    <!-- Externalize templates to avoid nesting. -->
-<template type="amp-mustache" id="myTemplatexxx">
-       Hi there {{fullname}}!
-</template>
+                        <template type="amp-mustache" id="carttemplate">
+                                       <p> ------------------------- </p>
+                    <div>
+                        {{#cart_items}}
+                        <div class="cart-item" id="item_{{name}}">
+                            <span>{{name}}</span>
+                            <span>{{quantity}}</span>
+                            <span>{{price}}</span>
+                        </div>
+                        {{/cart_items}}
+                        {{^cart_items}}
+                        <div>Your cart is empty!</div>
+                        {{/cart_items}}
+                    </div>
+        
+                                    <p> ------------------------- </p>
+                </template>
+            
+            
+            
+            <p> Done Test Five <br><br></p>
+            
+            <amp-state id="localState" class="i-amphtml-element i-amphtml-layout-container" i-amphtml-layout="container" hidden="" aria-hidden="true">
+      <script type="application/json">
+        {
+          "items": [{"id": 1}, {"id": 2}, {"id": 2}]
+        }
+      </script>
+    </amp-state>
+    <amp-list src="amp-state:localState">
+      <template type="amp-mustache">
+        <li>{{id}}</li>
+      </template>
+    </amp-list>
+            
+                                          <p> ----------- 6 -------------- </p>
+          
+     <amp-state id="itemsForDisplay" class="i-amphtml-element i-amphtml-layout-container" i-amphtml-layout="container" hidden="" aria-hidden="true">
+         <script type="application/json">
+     {
+      "items": [{
+        "id": 1,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Apple",
+        "price": "1.99",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "attribution": "visualhunt",
+        "url": "#",
+        "color": "green",
+        "title": "My Title"
+      }, {
+        "id": 2,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Orange",
+        "attribution": "visualhunt",
+        "price": "0.99",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9734;",
+        "url": "#",
+        "color": "orange",
+          "title": "My Title"
+      }, {
+        "id": 3,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Pear",
+        "attribution": "visualhunt",
+        "price": "1.50",
+        "stars": "&#9733;&#9733;&#9733;&#9734;&#9734;",
+        "url": "#",
+        "color": "green",
+          "title": "My Title"
+      }, {
+        "id": 4,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Banana",
+        "attribution": "pixabay",
+        "price": "1.50",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "url": "#",
+        "color": "yellow",
+          "title": "My Title"
+      }, {
+        "id": 5,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Watermelon",
+        "attribution": "pixabay",
+        "price": "4.50",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "url": "#",
+        "color": "red",
+          "title": "My Title"
+      }, {
+        "id": 6,
+        "img": "https://silken.site/img/portfolio/4.jpg",
+        "name": "Melon",
+        "attribution": "pixabay",
+        "price": "3.50",
+        "stars": "&#9733;&#9733;&#9733;&#9733;&#9733;",
+        "url": "#",
+        "color": "yellow",
+          "title": "My Title"
+      }]
+    }
+            </script>
+        </amp-state>
+            
+            
+      <!-- ## Basic usage -->
+      <!--
+      The `amp-list` content is provided by a JSON CORS endpoint, which is defined by the `src` attribute. The URL's protocol must be HTTPS. The response must be a JSON object containing an array property `items`, for example:
+      ```json
+      {
+        "items": [
+          {
+            "title": "amp-carousel",
+            "url": "https://ampbyexample.com/components/amp-carousel"
+          },
+          ...
+        ]
+      }
+      ```
+      The list content is rendered via an [amp-mustache template](/content/amp-dev/documentation/components/reference/amp-mustache-v0.2.md). The template can be specified either by id, or by using a nested element. For performance reasons, we're adding `binding="no"` as we're not using `amp-bind`.
+      -->
+      <amp-list layout="fixed-height" height="100" src="amp-state:itemsForDisplay" binding="no">
+        <template type="amp-mustache">
+          <div><a href="{{url}}">{{title}}</a></div>
+        </template>
+      </amp-list>
+    
+                                          <p> ------------- 7 ------------ </p>
+      <!-- ## Re-using an existing template -->
+      <!--
+    The template can also be specified using an ID of an existing `template` element.
+      -->
+      <div>
+        <template type="amp-mustache" id="amp-template-id">
+          <div><a href="{{url}}">{{title}}</a></div>
+        </template>
+        <amp-list layout="fixed-height" height="100" src="amp-state:itemsForDisplay" template="amp-template-id" binding="no">
+        </amp-list>
+      </div>
+                                  <p> ----------- 8 -------------- </p>
+      <!-- ## Handling list overflow -->
+      <!--
+       If the `amp-list` content requires more space than available, the AMP runtime will display the overflow element (if specified).
+      -->
+      <amp-list layout="fixed-height" height="48" src="itemsForDisplay" binding="no">
+        <div overflow="" role="button" aria-label="Show more" class="list-overflow">
+          Show more
+        </div>
+        <template type="amp-mustache">
+          <div><a href="{{url}}">{{title}}</a></div>
+        </template>
+      </amp-list>
+                                  <p> ----------- 9 -------------- </p>
+      <!--
+        ## Dynamic `src`
+    
+        The content of an `amp-list` can be changed dynamically by modifying it's `src` value using `amp-bind`.
+      -->
+      <div>
+        <amp-list layout="fixed-height" height="100" src="itemsForDisplay" [src]="srcUrl" binding="no">
+          <template type="amp-mustache">
+            <div><a href="{{url}}">{{title}}</a></div>
+          </template>
+        </amp-list>
+        <button on="tap:AMP.setState({ srcUrl: 'itemsForDisplay' })">Change source</button>
+      </div>
+                                  <p> ----------- 10 -------------- </p>
+      <!--
+        ## Rendering `amp-state`
+    
+        This sample shows off once of `amp-list`'s most powerful features: being able to directly render objects from `amp-state`, This is possible by binding the results of an `amp-bind` expression to the `src` attribute: `[src]="items"`. To make sure that the `amp-list` resizes accordingly, we dynamically calculate the `height` based on the number of list elements: `[height]="items.length * 22"`. The initial state (an empty list) is defined in an `amp-state` element.
+    
+        Important: `amp-bind` expressions are **not** evaluated on page load, but only after an user interaction has taken place. Initial `amp-list` content still needs to be fetched from a JSON endpoint.
+      -->
+      <div>
+        <amp-state id="items" class="i-amphtml-element i-amphtml-layout-container" i-amphtml-layout="container" hidden="" aria-hidden="true">
+          <script type="application/json">
+       {
+          "items": [{"id": 1}, {"id": 2}, {"id": 2}]
+        }
+          </script>
+        </amp-state>
+        <amp-list layout="fixed-height" height="0" [src]="items" [height]="items.length * 22" single-item="" items="." binding="no">
+          <template type="amp-mustache">
+            <div>{{ . }}</div>
+          </template>
+        </amp-list>
+        <button on="tap:AMP.setState({ items: items.splice(items.length, 0, 'item ' + items.length) })">
+          Add item
+        </button>
+      </div>
+                                  <p> -------------  11  ------------ </p>
+      <!--
+        ## Empty list content
+    
+        If the list contains an empty array, you can use  [mustache inverted sections](https://github.com/janl/mustache.js) to print a message.
+    
+        For this to work, we have to use the [`single-item` attribute](/content/amp-dev/documentation/components/reference/amp-list.md#single-item-(optional)) and [`items` attribute](/content/amp-dev/documentation/components/reference/amp-list.md#items-(optional)) to be able to access the root `items` array inside the template.
+      -->
+      <div>
+      <amp-list layout="fixed-height" height="100" src="itemsForDisplay" [src]="emptyListSampleSrc || 'amp-state:itemsForDisplay'" single-item="" items="." reset-on-refresh="" binding="no">
+        <template type="amp-mustache">
+          {{#items}}
+            <div><a href="{{url}}">{{title}}</a></div>
+          {{/items}}
+          {{^items}}
+            <div>No items founds.</div>
+          {{/items}}
+        </template>
+      </amp-list>
+      <button on="tap:AMP.setState({ emptyListSampleSrc: 'amp-state:itemsForDisplay' })">
+        Add items
+      </button>
+      </div>
+                                  <p> ----------- 12 -------------- </p>
+      <!--
+        ## Using a placeholder
+    
+        You can use a custom placeholder that looks similar to the rendered items to improve the user experience while the list is loading.
+        We are using an endpoint which intentionally delays the response by 10 seconds.
+      -->
+      <amp-list id="amp-list-placeholder" noloading="" layout="fixed-height" height="654" src="itemsForDisplay" binding="no">
+        <div placeholder="">
+          <div class="product">
+            <div class="image-placeholder"></div>
+            <div>Loading...</div>
+          </div>
+          <div class="product">
+            <div class="image-placeholder"></div>
+            <div>Loading...</div>
+          </div>
+          <div class="product">
+            <div class="image-placeholder"></div>
+            <div>Loading...</div>
+          </div>
+        </div>
+        <template type="amp-mustache">
+            <div class="product">
+                <amp-img width="150" height="100" alt="{{name}}" src="{{img}}"></amp-img>
+                <div>
+                  <div>{{name}}</div>
+                  <div>{{{stars}}}</div>
+                  <div>${{price}}</div>
+                </div>
+            </div>
+        </template>
+      </amp-list>
+                                  <p> ----------- 13 -------------- </p>
+      <!--
+        ## Triggering refresh
+    
+        You can use the `refresh` action to trigger a refresh on `amp-list`. Notice how we are using `reset-on-refresh` attribute to ensure that the placeholder is reloaded.
+      -->
+      <div>
+      <button on="tap:myAmpList.refresh">Refresh list</button>
+      <amp-list id="myAmpList" reset-on-refresh="" layout="fixed-height" height="600" src="itemsForDisplay" binding="no">
+        <template type="amp-mustache">
+            <div class="product">
+                <amp-img width="150" height="100" alt="{{name}}" src="{{img}}"></amp-img>
+                <div>
+                  <div>{{name}}</div>
+                  <div>{{{stars}}}</div>
+                  <div>${{price}}</div>
+                </div>
+            </div>
+        </template>
+      </amp-list>
+      </div>
+                                  <p> ----------- 14 -------------- </p>
+    
+            <div class="title__block mbr-pb-5 align-center">
+                <h4 class="mbr-section-subtitle mbr-pb-2 mbr-fonts-style display-7">Enter your gallery subtitle here</h4>
+                <h3 class="mbr-section-title mbr-bold mbr-fonts-style display-5">Gallery with Image Links</h3>
+    
+            </div>
+    
+            <div class="mbr-row mbr-px-2 gallery-wrap mbr-jc-c">
+            
+    
+                <div class="mbr-col-md-12 mbr-col-sm-12 gallery-row row-first flex-wrap mbr-col-lg-12 mbr-pb-4 mbr-flex">
+                    
+    
+    
+    
+                    
+                <div class="gallery-item mbr-col-sm-12 mbr-col-lg-6 mbr-col-md-8 md-pb mbr-px-2">
+    
+                        <div class="gallery-img-wrap">
+                            <amp-img class="mobirise-loader i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" src="assets/images/gallery00.jpg" layout="responsive" height="550" width="825" alt="image" i-amphtml-layout="responsive"><i-amphtml-sizer slot="i-amphtml-svc" style="padding-top: 66.6667%;"></i-amphtml-sizer>
+                                <div placeholder="" class="placeholder amp-hidden">
+                                    <div class="mobirise-spinner">
+                                        <em></em>
+                                        <em></em>
+                                        <em></em>
+                                    </div>
+                                <div class="mobirise-spinner">
+                                    <em></em>
+                                    <em></em>
+                                    <em></em>
+                                </div></div>
+                                <a href="https://silkenwindhound.com"></a>
+                            <img decoding="async" alt="image" src="assets/images/gallery006.jpg" class="i-amphtml-fill-content i-amphtml-replaced-content"></amp-img>
+    
+                            <div class="img-caption mbr-flex mbr-jc-c mbr-column caption-middle align-center">
+                                <p class="caption-text mbr-fonts-style mbr-white mbr-bold display-7">Kennel Kristull {{fullname}}</p>
+                                <p class="caption-subtitle mbr-section-subtitle mbr-pb-2 mbr-fonts-style mbr-white  display-7">Right from the
+                                    Beginning</p>
+                            </div>
+                        </div>
+    
+                    </div><div class="gallery-item mbr-col-sm-12 mbr-col-lg-6 mbr-col-md-8 md-pb mbr-px-2">
+    
+    
+                        <div class="gallery-img-wrap">
+                            <amp-img class="mobirise-loader i-amphtml-element i-amphtml-layout-responsive i-amphtml-layout-size-defined i-amphtml-layout" src="assets/images/gallery005.jpg" layout="responsive" height="550" width="825" alt="image" i-amphtml-layout="responsive"><i-amphtml-sizer slot="i-amphtml-svc" style="padding-top: 66.6667%;"></i-amphtml-sizer>
+                                <div placeholder="" class="placeholder amp-hidden">
+                                    <div class="mobirise-spinner">
+                                        <em></em>
+                                        <em></em>
+                                        <em></em>
+                                    </div>
+                                <div class="mobirise-spinner">
+                                    <em></em>
+                                    <em></em>
+                                    <em></em>
+                                </div></div>
+                                
+                            <img decoding="async" alt="image" src="assets/images/gallery005.jpg" class="i-amphtml-fill-content i-amphtml-replaced-content"></amp-img>
+                            <div class="img-caption mbr-flex mbr-jc-c mbr-column caption-middle align-center">
+    
+                                <p class="mbr-fonts-style mbr-white mbr-bold display-7"> Not in mustache
+                                    yet </p>
+    
+                                        <p class="caption-text mbr-fonts-style mbr-white mbr-bold display-7">Mustache Caption
+                                            Here <br> Hi {{fullname}}!</p>
+                                        <p class="caption-subtitle mbr-section-subtitle mbr-pb-2 mbr-fonts-style mbr-white  display-7">Mustache
+                                            Subtitle <br> {{#phonenumber}}</p>
+    
+    
+                            </div>
+                        </div>
+    
+                    </div></div>
 
-<amp-list id="myList" src="https://windhound.dog/cart.json" template="myTemplatexxx">
-</amp-list>
-    
-</section>
-  </div>
+      </div></div></div></div>
 
 <div id="custom-html-m"><section id="cssgridtest">
     
@@ -934,7 +1751,7 @@ The template can also be specified using an ID of an existing `template` element
 
 
                     <div class="gallery-img-wrap">
-                        <amp-img class="mobirise-loader" src="assets/images/gallery000.jpg" layout="responsive" height="550" width="825" alt="image">
+                        <amp-img class="mobirise-loader" src="assets/images/gallery003.jpg" layout="responsive" height="550" width="825" alt="image">
                             <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
@@ -1891,7 +2708,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptas ad minim
 	                    
 			<div class="mbr-column mbr-flex mbr-jc-c" data-form-type="formoid">
 <!--Formbuilder Form-->
-<form method="post" class="mbr-form" action-xhr="https://formoid.net/api/amp-form/push" data-form-title="Mobirise Form" id="myFormform28" on="submit:myFormform28.clear;submit-success:AMP.setState({myStateform28:{formdata01form28:{stateformdata01form28: '', valueformdata01form28: ''}, formdata21form28:{stateformdata21form28: '', valueformdata21form28: ''}, formdata31form28:{stateformdata31form28: '', valueformdata31form28: ''}}});submit-error:AMP.setState({myStateform28:{formdata01form28:{stateformdata01form28: myStateform28.formdata01form28.valueformdata01form28}, formdata21form28:{stateformdata21form28: myStateform28.formdata21form28.valueformdata21form28}, formdata31form28:{stateformdata31form28: myStateform28.formdata31form28.valueformdata31form28}}})"><amp-state id="myStateform28"><script type="application/json"> {"formdata01form28":{ "stateformdata01form28": "", "valueformdata01form28": ""},"formdata21form28":{ "stateformdata21form28": "", "valueformdata21form28": ""},"formdata31form28":{ "stateformdata31form28": "", "valueformdata31form28": ""}}</script></amp-state><input type="hidden" name="email" data-form-email="true" value="16Z7w1QjFUvtgW6+6nEAxrdl7Siy1lQ0jB6Ngh4e6v8fXbNFw8o1WTKvDKPI8njrnp3miM/f5K9Uc6Lzd66ar8wAwB48ygytzKUSmFVBnUXdiPU/XzMA6dHVlPADmH7L.bdCzBiaAXCXTHI2ykSNYBF+z5CWGl7eXPM7n8Mi4Z9sYzzRL65NiB6cUa2zUW1obCq6uV94Sh7vnlEzngCoui5yt+2ZEm1bUyjhWoPCTFAlJjlvPwzWoPvXQbiEX2Kbp">
+<form method="post" class="mbr-form" action-xhr="https://formoid.net/api/amp-form/push" data-form-title="Mobirise Form" id="myFormform28" on="submit:myFormform28.clear;submit-success:AMP.setState({myStateform28:{formdata01form28:{stateformdata01form28: '', valueformdata01form28: ''}, formdata21form28:{stateformdata21form28: '', valueformdata21form28: ''}, formdata31form28:{stateformdata31form28: '', valueformdata31form28: ''}}});submit-error:AMP.setState({myStateform28:{formdata01form28:{stateformdata01form28: myStateform28.formdata01form28.valueformdata01form28}, formdata21form28:{stateformdata21form28: myStateform28.formdata21form28.valueformdata21form28}, formdata31form28:{stateformdata31form28: myStateform28.formdata31form28.valueformdata31form28}}})"><amp-state id="myStateform28"><script type="application/json"> {"formdata01form28":{ "stateformdata01form28": "", "valueformdata01form28": ""},"formdata21form28":{ "stateformdata21form28": "", "valueformdata21form28": ""},"formdata31form28":{ "stateformdata31form28": "", "valueformdata31form28": ""}}</script></amp-state><input type="hidden" name="email" data-form-email="true" value="qjWKOAw4BHdIgSJCD+puMH+cZmRadCDdHAmgl1QpQy5zynRfhfXyKqDH+nPSA0fgZ07J9WmJ7FcAX+aUvdhFIF8GPvbljSq26xBorRy9MrZNX7Jp84rnInfurNeulTcx.rMaHZ3pdvYcWuC0Xk8VCjW3BqMJmRU+uSokD/iWESz/uU/5WzuTFMhXpVHioUuJfcuX/4RX0Z1Dzt9OFVETsNn47vcUeczgLkGHSHIo423FkAg2bcP4xVOi6nbdXIEbz">
 <div class="mbr-row">
 <div submit-success="" class="mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12">
 <template data-form-alert="" type="amp-mustache">Subscription successful!</template>
@@ -2060,7 +2877,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptas ad minim
         
         <div class="mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12">
                     <div class="image__block mbr-col-sm-12 mbr-m-auto">
-                <amp-img src="assets/images/logo-200x801.png" alt="image" height="456" width="1140" layout="responsive" class="mobirise-loader">
+                <amp-img src="assets/images/logo-200x804.png" alt="image" height="456" width="1140" layout="responsive" class="mobirise-loader">
                         <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
@@ -2150,7 +2967,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptas ad minim
             <div class="container-elements mbr-flex flex-wrap">
                 <div class="mbr-overlay"></div>
                 <div class="image-wrap mbr-flex mbr-col-sm-12">
-                    <amp-img src="assets/images/262.jpg" layout="responsive" width="800" height="800" alt="" class="mobirise-loader mbr-m-auto">
+                    <amp-img src="assets/images/265.jpg" layout="responsive" width="800" height="800" alt="" class="mobirise-loader mbr-m-auto">
                         <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
@@ -2253,7 +3070,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptas ad minim
         
         <div class="mbr-col-lg-12 mbr-col-md-12 mbr-col-sm-12">
                     <div class="image__block mbr-col-sm-12 mbr-m-auto">
-                <amp-img src="assets/images/logo-200x801.png" alt="image" height="456" width="1140" layout="responsive" class="mobirise-loader">
+                <amp-img src="assets/images/logo-200x804.png" alt="image" height="456" width="1140" layout="responsive" class="mobirise-loader">
                         <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
@@ -2343,7 +3160,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos voluptas ad minim
             <div class="container-elements mbr-flex flex-wrap">
                 <div class="mbr-overlay"></div>
                 <div class="image-wrap mbr-flex mbr-col-sm-12">
-                    <amp-img src="assets/images/262.jpg" layout="responsive" width="800" height="800" alt="" class="mobirise-loader mbr-m-auto">
+                    <amp-img src="assets/images/265.jpg" layout="responsive" width="800" height="800" alt="" class="mobirise-loader mbr-m-auto">
                         <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
